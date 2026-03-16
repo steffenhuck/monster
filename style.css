@@ -1,141 +1,216 @@
-body {
-  background: #1b1a17;
-  color: #e8e0d0;
-  font-family: Georgia, serif;
+:root {
+  --bg: #171413;
+  --bg-soft: #211d1b;
+  --text: #ece4da;
+  --muted: #b9aa9a;
+  --dim: #8f8174;
+  --rule: #3a322d;
+  --accent: #d7c2ad;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
   margin: 0;
-  line-height: 1.72;
-}
-
-.container {
-  max-width: 720px;
-  margin: auto;
-  padding: 60px 28px;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-h1 {
-  margin: 0 0 10px 0;
-  font-weight: 400;
-  font-size: 2.2rem;
-  letter-spacing: 0.16em;
-  color: #e8e0d0;
-}
-
-.subtitle {
-  margin: 0;
-  font-style: italic;
-  color: #b8a88a;
-}
-
-.cast {
-  margin-top: 34px;
-}
-
-.cast h2 {
-  margin: 0 0 12px 0;
-  font-size: 0.82rem;
-  font-weight: 400;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #b8a88a;
-}
-
-.cast ul {
-  list-style: none;
   padding: 0;
+}
+
+body {
   margin: 0;
-}
-
-.cast li {
-  margin: 4px 0;
-  color: #ddd3c0;
-}
-
-.play {
-  margin-top: 56px;
-}
-
-.speech {
-  margin-bottom: 26px;
-}
-
-.speaker {
-  margin-bottom: 4px;
-  font-variant: small-caps;
-  letter-spacing: 0.08em;
-  color: #b86a5d;
-}
-
-.speech p {
-  margin: 0;
-}
-
-.stage {
-  margin: 30px 0;
-  font-style: italic;
-  color: #a89679;
-}
-
-.stage-inline {
-  margin: 0 0 6px 0;
-  font-style: italic;
-  color: #a89679;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .tick {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 1px;
-  background: #6f6250;
-  opacity: 0.55;
+  background:
+    repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent 18px,
+      var(--rule) 18px,
+      var(--rule) 19px
+    );
+  opacity: 0.9;
+  margin-top: 2.5rem;
 }
+
+.container {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem 4rem 1.5rem;
+}
+
+.hero {
+  margin-bottom: 3.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 6vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.subtitle {
+  margin: 0.8rem 0 2.5rem 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.cast {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.2rem;
+  max-width: 24rem;
+}
+
+.cast h2 {
+  margin: 0 0 0.6rem 0;
+  font-size: 0.92rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cast ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cast li {
+  margin: 0.18rem 0;
+  color: var(--text);
+}
+
+.play {
+  margin-top: 2rem;
+}
+
+.speech,
+.stage {
+  margin: 0 0 1.6rem 0;
+}
+
+.speech p,
+.stage {
+  font-size: 1.08rem;
+}
+
+.speech p {
+  margin: 0.18rem 0 0 0;
+}
+
+.speaker {
+  margin-bottom: 0.2rem;
+  font-size: 0.88rem;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.stage {
+  color: var(--dim);
+  font-style: italic;
+}
+
+.stage-inline {
+  margin: 0 0 0.2rem 0;
+  color: var(--dim);
+  font-style: italic;
+}
+
+.poodle .speaker {
+  color: #e0d2c2;
+}
+
+.final-stage {
+  margin-top: 2rem;
+}
+
+/* signature rule + signature */
 
 .signature-rule {
   border: 0;
-  height: 1px;
-  width: 120px;
-  margin: 72px auto 38px auto;
-  background: #6f6250;
-  opacity: 0.55;
+  border-top: 1px solid var(--rule);
+  width: 100%;
+  margin: 4rem 0 1rem 0;
 }
 
 .signature {
   text-align: center;
-  margin-bottom: 42px;
+  margin: 0;
 }
 
 .signature a {
   display: inline-block;
-  font-size: 0.82rem;
-  letter-spacing: 0.38em;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--dim);
+  letter-spacing: 0.28em;
   text-transform: lowercase;
   text-decoration: none;
-  color: #b8a88a;
 }
 
 .signature a:visited,
 .signature a:hover,
-.signature a:active {
-  color: #b8a88a;
+.signature a:active,
+.signature a:focus {
+  color: var(--dim);
   text-decoration: none;
 }
 
-@media (max-width: 700px) {
+a {
+  color: inherit;
+}
+
+@media (max-width: 640px) {
+  .tick {
+    margin-top: 1.5rem;
+  }
+
   .container {
-    padding: 42px 22px;
+    padding: 1.5rem 1.15rem 3rem 1.15rem;
   }
 
-  h1 {
-    font-size: 1.85rem;
+  .hero {
+    margin-bottom: 2.8rem;
   }
 
-  .play {
-    margin-top: 44px;
+  .subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .speech,
+  .stage {
+    margin-bottom: 1.35rem;
+  }
+
+  .speech p,
+  .stage {
+    font-size: 1.02rem;
+    line-height: 1.72;
+  }
+
+  .signature-rule {
+    margin: 3rem 0 0.9rem 0;
+  }
+
+  .signature a {
+    font-size: 0.84rem;
+    letter-spacing: 0.24em;
   }
 }
